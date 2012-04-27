@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 
 gem "active_model_serializers", :git => "git://github.com/josevalim/active_model_serializers.git"
 gem "sorcery"
+gem 'ember-rails', :github => 'emberjs/ember-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -23,7 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'quiet_assets'
+gem 'thin'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

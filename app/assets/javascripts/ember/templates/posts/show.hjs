@@ -1,0 +1,14 @@
+<td>{{post.id}}</td>
+<td class="data">
+  {{#if isEditing}}
+    {{view EmberRailsDemo.EditPostView postBinding="post"}}
+  {{else}}
+    {{post.title}} - {{post.body}}
+  {{/if}}
+  <div class="commands">
+    {{#unless isEditing}}
+      <a href="#" {{action "showEdit"}}>Edit</a>
+      <a href="#" {{action "destroyRecord"}}>Remove</a>
+    {{/unless}}
+  </div>
+</td>

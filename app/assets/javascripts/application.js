@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ember
+//= require ember-data
+//= require ember/ember_rails_demo
 //= require_tree .

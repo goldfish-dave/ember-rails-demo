@@ -1,28 +1,51 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    render :json => @posts
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
   end
 
   def show
     @post = Post.find(params[:id])
-    render :json => @post
+
+    respond_to do |format|
+      format.json { render json: @post }
+    end
   end
 
   def create
-    @post = Post.create(params[:post])
-    render :json => @post
+    @post = Post.new(params[:post])
+
+    respond_to do |format|
+      if @post.save
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(params[:post])
-    render :json => @post
+
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        format.json { render json: nil, status: :ok }
+      else
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    head :ok
+
+    respond_to do |format|
+      format.json { render json: nil, status: :ok }
+    end
   end
 end
