@@ -1,6 +1,6 @@
-EmberRailsDemo.ShowPostView = Ember.View.extend(
-  templateName: "ember/templates/posts/show"
-  classNames: [ "show-post" ]
+EmberRailsDemo.PostView = Ember.View.extend(
+  templateName: "ember/templates/posts/post"
+  classNames: [ "post-item" ]
   tagName: "tr"
   doubleClick: (event) ->
     @showEdit()

@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require ember
 //= require ember-data
+//= require ember/lib/route_manager
 //= require ember/ember_rails_demo
 //= require_tree .

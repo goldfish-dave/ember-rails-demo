@@ -9,7 +9,7 @@
   <tbody>
   {{#each post}}
     {{#if this.id}}
-      {{view EmberRailsDemo.ShowPostView postBinding="this"}}
+      {{view EmberRailsDemo.PostView postBinding="this"}}
     {{/if}}
   {{/each}}
   {{#if isNewVisible}}

@@ -12,6 +12,25 @@ EmberRailsDemo.store = DS.Store.create(
   revision: 4
 )
 
+EmberRailsDemo.routeManager = Ember.RouteManager.create(
+  enableLogging: true
+  posts: Ember.ViewState.create(
+    route: "posts"
+    view: EmberRailsDemo.PostIndexView
+    index: Ember.ViewState.create(
+      route: 'index'
+      view: EmberRailsDemo.PostIndexView
+    )
+    show: Ember.ViewState.create(
+      route: ":id"
+      view: EmberRailsDemo.PostShowView
+      enter: (stateManager, transition) ->
+        @_super stateManager, transition
+        params = stateManager.get("params")
+        postId = params.id
+    )
+  )
+)
 EmberRailsDemo.displayError = (e) ->
   if typeof e is "string"
     alert e
