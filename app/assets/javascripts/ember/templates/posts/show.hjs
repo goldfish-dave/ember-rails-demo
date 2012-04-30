@@ -1,9 +1,9 @@
-<td>{{content.id}}</td>
+<td>{{post.id}}</td>
 <td class="data">
   {{#if isEditing}}
-    {{view App.EditPostView postBinding="content"}}
+    {{view App.EditPostView postBinding="post"}}
   {{else}}
-    {{content.title}} - {{content.body}}
+    {{post.title}} - {{post.body}}
   {{/if}}
   <div class="commands">
     {{#unless isEditing}}

@@ -8,7 +8,7 @@ Post#index
     </tr>
   </thead>
   <tbody>
-  {{#each post}}
+  {{#each posts}}
     {{#if this.id}}
       {{view App.PostView postBinding="this"}}
     {{/if}}
@@ -17,5 +17,4 @@ Post#index
 </table>
 <div class="commands">
   <a href="#posts/new">New Post</a>
-  <a href="#" {{action "refreshListing"}}>Refresh</a>
 </div>

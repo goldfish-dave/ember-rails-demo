@@ -15,4 +15,5 @@ App.PostShowView = Ember.View.extend(
     post = @get("post")
     post.deleteRecord()
     App.store.commit()
+    App.routeManager.set('location','posts')
 )
