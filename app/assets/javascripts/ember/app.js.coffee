@@ -14,11 +14,12 @@ App.Models = {}
 App.Controllers = {}
 App.Views = {}
 
-# namespacing for real objects
+# namespacing for instances
 App.models = {}
 App.controllers = {}
 App.views = {}
 
+# specify the adapter for accessing with ember-data
 App.store = DS.Store.create(
   adapter: DS.RESTAdapter.create(bulkCommit: false)
   revision: 4
@@ -26,13 +27,6 @@ App.store = DS.Store.create(
 
 $ ->
   App.controllers.posts.findAll()
+  # DOM placement, all views will hang off this one
   App.views.main.appendTo('body')
   App.router.start()
-
-App.displayError = (e) ->
-  if typeof e is "string"
-    alert e
-  else if typeof e is "object" and e.responseText isnt `undefined`
-    alert e.responseText
-  else
-    alert "An unexpected error occurred."

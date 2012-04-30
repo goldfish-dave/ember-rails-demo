@@ -2,18 +2,20 @@ App.Views.Posts ||= {}
 App.Views.Posts.NewView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
+
+  # different than edit to enable validation for new objects
   init: ->
     @_super()
     @transaction = App.store.transaction()
     @set "post", @transaction.createRecord(App.Models.Post, {})
 
+  # called when added to the dom, like viewDidLoad
   didInsertElement: ->
     @_super()
     @$("input:first").focus()
 
   cancelForm: ->
     @transaction.rollback()
-    #@get("parentView").hideNew()
     App.router.set('location','posts')
 
   submit: (event) ->
@@ -24,7 +26,5 @@ App.Views.Posts.NewView = Ember.View.extend(
       App.displayError validationErrors
     else
       @transaction.commit()
-      #@get("parentView").hideNew()
       App.router.set('location','posts')
-
 )

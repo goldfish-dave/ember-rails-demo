@@ -2,6 +2,8 @@ App.Views.Posts ||= {}
 App.Views.Posts.EditView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
+
+  # called when added to the dom, like viewDidLoad
   didInsertElement: ->
     @transaction = App.store.transaction()
     @transaction.add @get("post")
@@ -10,7 +12,7 @@ App.Views.Posts.EditView = Ember.View.extend(
 
   cancelForm: ->
     @transaction.rollback()
-    @get("parentView").hideEdit()
+    App.router.set('location','posts')
 
   submit: (event) ->
     post = @get("post")
@@ -20,5 +22,5 @@ App.Views.Posts.EditView = Ember.View.extend(
       App.displayError validationErrors
     else
       @transaction.commit()
-      @get("parentView").hideEdit()
+      App.router.set('location','posts')
 )

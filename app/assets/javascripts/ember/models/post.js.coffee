@@ -3,9 +3,11 @@ App.Models.Post = DS.Model.extend(
   body: DS.attr("string")
 
   validate: ->
-    "Posts require a title and body."  if @get("title") is `undefined` or @get("title") is "" or @get("body") is `undefined` or @get("body") is ""
-
+    if @get("title") is `undefined` or @get("title") is "" or @get("body") is `undefined` or @get("body") is ""
+      "Posts require a title and body."
 )
+
+# this is annoying...since I namespace I have to specify
 App.Models.Post.reopenClass(
   url: 'post'
 )
