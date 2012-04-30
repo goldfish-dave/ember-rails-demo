@@ -1,10 +1,10 @@
-EmberRailsDemo.NewPostView = Ember.View.extend(
+App.NewPostView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
   init: ->
     @_super()
-    @transaction = EmberRailsDemo.store.transaction()
-    @set "post", @transaction.createRecord(EmberRailsDemo.Post, {})
+    @transaction = App.store.transaction()
+    @set "post", @transaction.createRecord(App.Post, {})
 
   didInsertElement: ->
     @_super()
@@ -12,15 +12,18 @@ EmberRailsDemo.NewPostView = Ember.View.extend(
 
   cancelForm: ->
     @transaction.rollback()
-    @get("parentView").hideNew()
+    #@get("parentView").hideNew()
+    App.routeManager.set('location','posts')
 
   submit: (event) ->
     post = @get("post")
     validationErrors = post.validate()
     event.preventDefault()
     if validationErrors isnt `undefined`
-      EmberRailsDemo.displayError validationErrors
+      App.displayError validationErrors
     else
       @transaction.commit()
-      @get("parentView").hideNew()
+      #@get("parentView").hideNew()
+      App.routeManager.set('location','posts')
+
 )

@@ -1,8 +1,8 @@
-EmberRailsDemo.EditPostView = Ember.View.extend(
+App.EditPostView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
   didInsertElement: ->
-    @transaction = EmberRailsDemo.store.transaction()
+    @transaction = App.store.transaction()
     @transaction.add @get("post")
     @_super()
     @$("input:first").focus()
@@ -16,7 +16,7 @@ EmberRailsDemo.EditPostView = Ember.View.extend(
     validationErrors = post.validate()
     event.preventDefault()
     if validationErrors isnt `undefined`
-      EmberRailsDemo.displayError validationErrors
+      App.displayError validationErrors
     else
       @transaction.commit()
       @get("parentView").hideEdit()

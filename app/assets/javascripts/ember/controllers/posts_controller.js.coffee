@@ -1,8 +1,8 @@
-EmberRailsDemo.PostsController = Ember.ArrayController.extend(
+App.PostsController = Ember.ArrayController.extend(
   loadAll: (data) ->
     @findAll()
 
   findAll: ->
-    @set 'content', EmberRailsDemo.store.findAll(EmberRailsDemo.Post)
+    @set 'content', App.store.findAll(App.Post)
 )
-EmberRailsDemo.postsController = EmberRailsDemo.PostsController.create()
+App.postsController = App.PostsController.create()

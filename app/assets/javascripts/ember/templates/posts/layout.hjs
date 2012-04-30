@@ -1,0 +1,6 @@
+<header class="jumbotron subhead">
+  <h1>Posts#layout</h1>
+</header>
+<div class="sub-container">
+  {{dynamicView}}
+</div>

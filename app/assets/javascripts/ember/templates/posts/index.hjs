@@ -1,3 +1,4 @@
+Post#index
 <table>
   <thead>
     <tr>
@@ -9,20 +10,12 @@
   <tbody>
   {{#each post}}
     {{#if this.id}}
-      {{view EmberRailsDemo.PostView postBinding="this"}}
+      {{view App.PostView postBinding="this"}}
     {{/if}}
   {{/each}}
-  {{#if isNewVisible}}
-    <tr>
-      <td>*</td>
-      <td>
-        {{view EmberRailsDemo.NewPostView}}
-      </td>
-    </tr>
-  {{/if}}
   </tbody>
 </table>
 <div class="commands">
-  <a href="#" {{action "showNew"}}>New Post</a>
+  <a href="#posts/new">New Post</a>
   <a href="#" {{action "refreshListing"}}>Refresh</a>
 </div>

@@ -1,13 +1,7 @@
-EmberRailsDemo.PostIndexView = Ember.View.extend(
+App.PostIndexView = Ember.View.extend(
   templateName: "ember/templates/posts/index"
-  postBinding: "EmberRailsDemo.postsController"
-
-  showNew: ->
-    @set "isNewVisible", true
-
-  hideNew: ->
-    @set "isNewVisible", false
+  postBinding: "App.postsController"
 
   refreshListing: ->
-    EmberRailsDemo.postsController.findAll()
+    App.postsController.findAll()
 )

@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require ember
 //= require ember-data
-//= require ember/lib/route_manager
-//= require ember/ember_rails_demo
+//= require ember/lib/ember-routemanager
+//= require ember/lib/ember-layout
+//= require ember/app
 //= require_tree .
