@@ -10,7 +10,7 @@ Post#index
   <tbody>
   {{#each posts}}
     {{#if this.id}}
-      {{view App.PostView postBinding="this"}}
+      {{view App.Views.Posts.PostView postBinding="this"}}
     {{/if}}
   {{/each}}
   </tbody>

@@ -1,7 +1,7 @@
 <td>{{post.id}}</td>
 <td class="data">
   {{#if isEditing}}
-    {{view App.EditPostView postBinding="post"}}
+    {{view App.Views.Posts.EditView postBinding="post"}}
   {{else}}
     {{post.title}} - {{post.body}}
   {{/if}}

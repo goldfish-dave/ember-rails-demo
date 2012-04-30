@@ -12,34 +12,34 @@ App.SubNavState = App.NavState.extend(
   navSelector: ".subnav .nav"
 )
 
-App.main = App.MainLayoutView.create()
+App.views.main = App.Views.Main.LayoutView.create()
 
-App.routeManager = Ember.RouteManager.create(
+App.router = Ember.RouteManager.create(
   enableLogging: true
-  rootView: App.main
+  rootView: App.views.main
 
   home: App.NavState.create(
     selector: '.home'
-    viewClass: App.MainHomeView
+    viewClass: App.Views.Main.HomeView
   )
   posts: App.NavState.create(
     selector: ".posts"
     route: "posts"
-    viewClass: App.PostLayoutView
+    viewClass: App.Views.Posts.LayoutView
     index: Ember.LayoutState.create(
-      viewClass: App.PostIndexView
+      viewClass: App.Views.Posts.IndexView
     )
     newPost: Ember.LayoutState.create(
       route: "new"
-      viewClass: App.NewPostView
+      viewClass: App.Views.Posts.NewView
     )
     show: Ember.LayoutState.create(
       route: ":postId"
-      viewClass: App.PostShowView
+      viewClass: App.Views.Posts.ShowView
       enter: (stateManager, transition) ->
         @_super stateManager, transition
         postId = stateManager.getPath("params.postId")
-        post = App.store.find(App.Post,postId)
+        post = App.store.find(App.Models.Post,postId)
         @get("view").set "post", post
     )
   )

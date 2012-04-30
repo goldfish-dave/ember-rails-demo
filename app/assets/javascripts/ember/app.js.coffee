@@ -6,7 +6,18 @@
 #= require_tree ./templates
 #= require_tree ./router
 
+# overall app
 window.App = Ember.Application.create()
+
+# namespacing for classes
+App.Models = {}
+App.Controllers = {}
+App.Views = {}
+
+# namespacing for real objects
+App.models = {}
+App.controllers = {}
+App.views = {}
 
 App.store = DS.Store.create(
   adapter: DS.RESTAdapter.create(bulkCommit: false)
@@ -14,9 +25,9 @@ App.store = DS.Store.create(
 )
 
 $ ->
-  App.postsController.findAll()
-  App.main.appendTo('body')
-  App.routeManager.start()
+  App.controllers.posts.findAll()
+  App.views.main.appendTo('body')
+  App.router.start()
 
 App.displayError = (e) ->
   if typeof e is "string"

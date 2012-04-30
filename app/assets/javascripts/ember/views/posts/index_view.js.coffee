@@ -1,7 +1,5 @@
-App.PostIndexView = Ember.View.extend(
+App.Views.Posts ||= {}
+App.Views.Posts.IndexView = Ember.View.extend(
   templateName: "ember/templates/posts/index"
-  postsBinding: "App.postsController"
-
-  refreshListing: ->
-    App.postsController.findAll()
+  postsBinding: "App.controllers.posts"
 )

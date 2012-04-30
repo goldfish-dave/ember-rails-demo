@@ -1,10 +1,11 @@
-App.NewPostView = Ember.View.extend(
+App.Views.Posts ||= {}
+App.Views.Posts.NewView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
   init: ->
     @_super()
     @transaction = App.store.transaction()
-    @set "post", @transaction.createRecord(App.Post, {})
+    @set "post", @transaction.createRecord(App.Models.Post, {})
 
   didInsertElement: ->
     @_super()
@@ -13,7 +14,7 @@ App.NewPostView = Ember.View.extend(
   cancelForm: ->
     @transaction.rollback()
     #@get("parentView").hideNew()
-    App.routeManager.set('location','posts')
+    App.router.set('location','posts')
 
   submit: (event) ->
     post = @get("post")
@@ -24,6 +25,6 @@ App.NewPostView = Ember.View.extend(
     else
       @transaction.commit()
       #@get("parentView").hideNew()
-      App.routeManager.set('location','posts')
+      App.router.set('location','posts')
 
 )

@@ -1,4 +1,5 @@
-App.PostShowView = Ember.View.extend(
+App.Views.Posts ||= {}
+App.Views.Posts.ShowView = Ember.View.extend(
   templateName: "ember/templates/posts/show"
 
   doubleClick: (event) ->
@@ -15,5 +16,5 @@ App.PostShowView = Ember.View.extend(
     post = @get("post")
     post.deleteRecord()
     App.store.commit()
-    App.routeManager.set('location','posts')
+    App.router.set('location','posts')
 )

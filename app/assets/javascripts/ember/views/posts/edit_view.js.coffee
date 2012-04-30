@@ -1,4 +1,5 @@
-App.EditPostView = Ember.View.extend(
+App.Views.Posts ||= {}
+App.Views.Posts.EditView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
   didInsertElement: ->
