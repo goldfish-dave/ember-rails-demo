@@ -1,2 +1,2 @@
 Handlebars.registerHelper "submitButton", (text) ->
-  new Handlebars.SafeString("<button type=\"submit\">" + text + "</button>")
+  new Handlebars.SafeString("<button class=\"btn\" type=\"submit\">" + text + "</button>")

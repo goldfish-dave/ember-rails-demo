@@ -1,4 +1,4 @@
-<td><a href="#posts/{{unbound post.id}}">{{post.id}}</a></td>
-<td class="data">
-  {{post.title}} - {{post.body}}
-</td>
+<div class='well'>
+  <p>{{post.title}} - {{post.body}}</p>
+  <a href="#posts/{{unbound post.id}}" class='btn btn-primary btn-small'>Show</a>
+</div>

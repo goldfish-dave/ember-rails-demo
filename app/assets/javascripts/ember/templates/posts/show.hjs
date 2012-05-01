@@ -1,14 +1,20 @@
-<td>{{post.id}}</td>
-<td class="data">
+<div class='page-header'>
+  <h1>
+    Post
+  </h1>
+</div>
+<div class='hero-unit'>
   {{#if isEditing}}
     {{view App.Views.Posts.EditView postBinding="post"}}
   {{else}}
-    {{post.title}} - {{post.body}}
+    <p>{{post.title}} - {{post.body}}</p>
   {{/if}}
-  <div class="commands">
-    {{#unless isEditing}}
-      <a {{action "showEdit"}}>Edit</a>
-      <a {{action "destroyRecord"}}>Remove</a>
-    {{/unless}}
-  </div>
-</td>
+</div>
+
+<div class='well'>
+  {{#unless isEditing}}
+    <a {{action "showEdit"}} class='btn btn-primary'>Edit</a>
+    <a {{action "destroyRecord"}} class='btn destroy btn-danger'>Remove</a>
+  {{/unless}}
+  <a href="#posts" class='btn'>Back</a>
+</div>

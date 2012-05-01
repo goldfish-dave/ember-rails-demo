@@ -23,7 +23,7 @@
     @channel.bind "destroyed", (pushed_model) =>
       console?.log('destroyed' + JSON.stringify(pushed_model))
       foo = @store.find(@model,pushed_model.id)
-      if foo.get('id')
+      if foo.get('id') and foo.stateManager?.currentState?.name != 'inFlight'
         foo.deleteRecord()
 
   @Emberpusher = Emberpusher
