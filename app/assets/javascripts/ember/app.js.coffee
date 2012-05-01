@@ -10,7 +10,7 @@
 window.App = Ember.Application.create()
 
 # namespacing for classes
-App.Models = {}
+App.Models = {} # can't use
 App.Controllers = {}
 App.Views = {}
 
@@ -26,10 +26,11 @@ App.store = DS.Store.create(
 )
 
 $ ->
-  App.controllers.posts.findAll()
-  # DOM placement, all views will hang off this one
-  App.views.main.appendTo('body')
   App.pusher = new Pusher("dab3c715ed1d6f06af61") # replace with app_key
   @posts_channel = App.pusher.subscribe('posts')
   @posts_pusher = new Emberpusher(@posts_channel,App.store,App.Post)
+
+  # DOM placement, all views will hang off this one
+  App.views.main.appendTo('body')
+  App.controllers.posts.findAll()
   App.router.start()
