@@ -9,6 +9,7 @@
       foo = @store.find(@model,pushed_model.id)
       if foo.get('id') and foo.stateManager?.currentState?.name != 'inFlight'
         foo.setProperties(pushed_model)
+        foo.stateManager.goToState('loaded')
       else
         @store.load(@model, pushed_model)
 
@@ -17,6 +18,7 @@
       foo = @store.find(@model,pushed_model.id)
       if foo.get('id') and foo.stateManager?.currentState?.name != 'inFlight'
         foo.setProperties(pushed_model)
+        foo.stateManager.goToState('loaded')
       else
         @store.load(@model, pushed_model)
 
