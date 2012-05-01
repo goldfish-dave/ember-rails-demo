@@ -7,7 +7,7 @@
     @channel.bind "created", (pushed_model) =>
       console?.log('created' + JSON.stringify(pushed_model))
       foo = @store.find(@model,pushed_model.id)
-      if foo.get('id')
+      if foo.get('id') and foo.stateManager?.currentState?.name != 'inFlight'
         foo.setProperties(pushed_model)
       else
         @store.load(@model, pushed_model)
@@ -15,7 +15,7 @@
     @channel.bind "updated", (pushed_model) =>
       console?.log('updated' + JSON.stringify(pushed_model))
       foo = @store.find(@model,pushed_model.id)
-      if foo.get('id')
+      if foo.get('id') and foo.stateManager?.currentState?.name != 'inFlight'
         foo.setProperties(pushed_model)
       else
         @store.load(@model, pushed_model)
