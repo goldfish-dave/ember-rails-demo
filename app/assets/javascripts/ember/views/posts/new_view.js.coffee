@@ -7,7 +7,7 @@ App.Views.Posts.NewView = Ember.View.extend(
   init: ->
     @_super()
     @transaction = App.store.transaction()
-    @set "post", @transaction.createRecord(App.Models.Post, {})
+    @set "post", @transaction.createRecord(App.Post, {})
 
   # called when added to the dom, like viewDidLoad
   didInsertElement: ->

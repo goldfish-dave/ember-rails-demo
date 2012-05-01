@@ -46,7 +46,7 @@ App.router = Ember.RouteManager.create(
       enter: (stateManager, transition) ->
         @_super stateManager, transition
         postId = stateManager.getPath("params.postId")
-        post = App.store.find(App.Models.Post,postId)
+        post = App.store.find(App.Post,postId)
         @get("view").set "post", post
     )
   )

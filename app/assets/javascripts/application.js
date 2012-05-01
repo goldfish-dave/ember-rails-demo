@@ -15,6 +15,8 @@
 //= require bootstrap
 //= require ember
 //= require ember-data
+//= require ember/lib/pusher.min.js
+//= require ember/lib/emberpusher.js
 //= require ember/lib/ember-routemanager
 //= require ember/lib/ember-layout
 //= require ember/app

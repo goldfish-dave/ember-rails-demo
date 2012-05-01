@@ -1,4 +1,4 @@
-App.Models.Post = DS.Model.extend(
+App.Post = DS.Model.extend(
   title: DS.attr("string")
   body: DS.attr("string")
 
@@ -8,6 +8,6 @@ App.Models.Post = DS.Model.extend(
 )
 
 # this is annoying...since I namespace I have to specify
-App.Models.Post.reopenClass(
-  url: 'post'
-)
+#App.Models.Post.reopenClass(
+#  url: 'post'
+#)
