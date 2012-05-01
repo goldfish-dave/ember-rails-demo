@@ -1,4 +1,6 @@
 # changes the active state for nav
+# TODO - page doesn't exist for initial state change
+# so initial active isn't set
 App.NavState = Ember.LayoutState.extend(
   navSelector: ".navbar .nav"
   enter: (stateManager, transition) ->
@@ -12,12 +14,12 @@ App.NavState = Ember.LayoutState.extend(
 # have to place this into the DOM ourselves
 App.views.main = App.Views.Main.LayoutView.create()
 
-
 App.router = Ember.RouteManager.create(
   enableLogging: true
 
   # every view hangs off this one
   rootView: App.views.main
+  initialState: 'home'
 
   # Home
   home: App.NavState.create(
@@ -29,6 +31,7 @@ App.router = Ember.RouteManager.create(
   posts: App.NavState.create(
     selector: ".posts"
     route: "posts"
+    initialState: 'index'
     viewClass: App.Views.Posts.LayoutView
     # posts#index
     index: Ember.LayoutState.create(

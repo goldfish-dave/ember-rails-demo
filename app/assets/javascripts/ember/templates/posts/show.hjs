@@ -1,8 +1,6 @@
-<div class='page-header'>
-  <h1>
-    Post
-  </h1>
-</div>
+<h4>
+  Post#show
+</h4>
 <div class='hero-unit'>
   {{#if isEditing}}
     {{view App.Views.Posts.EditView postBinding="post"}}

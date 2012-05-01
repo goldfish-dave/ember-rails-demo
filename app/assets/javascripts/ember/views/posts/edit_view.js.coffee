@@ -2,6 +2,7 @@ App.Views.Posts ||= {}
 App.Views.Posts.EditView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
+  classNames: ["form-horizontal"]
 
   # called when added to the dom, like viewDidLoad
   didInsertElement: ->

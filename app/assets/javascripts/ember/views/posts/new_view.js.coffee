@@ -2,6 +2,7 @@ App.Views.Posts ||= {}
 App.Views.Posts.NewView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
+  classNames: ["form-horizontal"]
 
   # different than edit to enable validation for new objects
   init: ->
