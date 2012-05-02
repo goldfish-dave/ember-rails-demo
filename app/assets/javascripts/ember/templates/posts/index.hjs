@@ -1,7 +1,7 @@
 <h4>Post#index</h4>
 {{#each posts}}
   {{#if this.id}}
-    {{view App.Views.Posts.PostView postBinding="this"}}
+    {{view App.PostsPostView postBinding="this"}}
   {{/if}}
 {{/each}}
 <div class="well">

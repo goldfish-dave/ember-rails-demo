@@ -3,7 +3,7 @@
 </h4>
 <div class='hero-unit'>
   {{#if isEditing}}
-    {{view App.Views.Posts.EditView postBinding="post"}}
+    {{view App.PostsEditView postBinding="post"}}
   {{else}}
     <p>{{post.title}} - {{post.body}}</p>
   {{/if}}

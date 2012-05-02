@@ -9,16 +9,6 @@
 # overall app
 window.App = Ember.Application.create()
 
-# namespacing for classes
-App.Models = {} # can't use
-App.Controllers = {}
-App.Views = {}
-
-# namespacing for instances
-App.models = {}
-App.controllers = {}
-App.views = {}
-
 # specify the adapter for accessing with ember-data
 App.store = DS.Store.create(
   adapter: DS.RESTAdapter.create(bulkCommit: false)
@@ -31,6 +21,6 @@ $ ->
   @posts_pusher = new Emberpusher(@posts_channel,App.store,App.Post)
 
   # DOM placement, all views will hang off this one
-  App.views.main.appendTo('body')
-  App.controllers.posts.findAll()
+  App.mainView.appendTo('body')
+  App.postsController.findAll()
   App.router.start()

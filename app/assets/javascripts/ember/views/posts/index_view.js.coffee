@@ -1,5 +1,4 @@
-App.Views.Posts ||= {}
-App.Views.Posts.IndexView = Ember.View.extend(
+App.PostsIndexView = Ember.View.extend(
   templateName: "ember/templates/posts/index"
-  postsBinding: "App.controllers.posts"
+  postsBinding: "App.postsController"
 )

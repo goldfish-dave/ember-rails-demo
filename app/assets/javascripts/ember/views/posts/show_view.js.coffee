@@ -1,5 +1,4 @@
-App.Views.Posts ||= {}
-App.Views.Posts.ShowView = Ember.View.extend(
+App.PostsShowView = Ember.View.extend(
   templateName: "ember/templates/posts/show"
 
   doubleClick: (event) ->

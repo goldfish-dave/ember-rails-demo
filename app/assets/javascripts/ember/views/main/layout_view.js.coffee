@@ -1,5 +1,3 @@
-App.Views.Main ||= {}
-
-App.Views.Main.LayoutView = Ember.View.extend(
+App.MainLayoutView = Ember.View.extend(
   templateName: "ember/templates/main/layout"
 )

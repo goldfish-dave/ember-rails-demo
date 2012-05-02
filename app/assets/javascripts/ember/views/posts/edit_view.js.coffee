@@ -1,5 +1,4 @@
-App.Views.Posts ||= {}
-App.Views.Posts.EditView = Ember.View.extend(
+App.PostsEditView = Ember.View.extend(
   tagName: "form"
   templateName: "ember/templates/posts/edit"
   classNames: ["form-horizontal"]
