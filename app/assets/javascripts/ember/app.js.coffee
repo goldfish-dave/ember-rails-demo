@@ -9,6 +9,9 @@
 # overall app
 window.App = Ember.Application.create()
 
+# debug stuff
+#Ember.LOG_BINDINGS = true
+
 # specify the adapter for accessing with ember-data
 App.store = DS.Store.create(
   adapter: DS.RESTAdapter.create(bulkCommit: false)
