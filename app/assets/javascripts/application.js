@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require ember
-//= require ember-data
+//= require ember/lib/ember
+//= require ember/lib/ember-data
 //= require ember/lib/pusher.min.js
 //= require ember/lib/emberpusher.js
 //= require ember/lib/ember-routemanager

@@ -8,6 +8,12 @@
     <p>{{post.title}} - {{post.body}}</p>
   {{/if}}
 </div>
+{{#each comments}}
+  {{#if this.id}}
+    {{view App.CommentsCommentView commentBinding="this"}}
+  {{/if}}
+{{/each}}
+{{view App.CommentsNewView commentBinding="this"}}
 
 <div class='well'>
   {{#unless isEditing}}

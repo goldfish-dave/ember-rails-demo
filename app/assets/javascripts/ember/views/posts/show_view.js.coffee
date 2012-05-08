@@ -1,5 +1,7 @@
 App.PostsShowView = Ember.View.extend(
   templateName: "ember/templates/posts/show"
+  postBinding: "App.postsController.selectedPost"
+  commentsBinding: "App.postsController.selectedPost.comments"
 
   doubleClick: (event) ->
     @showEdit()

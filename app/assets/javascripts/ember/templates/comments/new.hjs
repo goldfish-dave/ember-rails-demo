@@ -1,0 +1,5 @@
+{{#with comment}}
+  {{view Ember.TextField valueBinding="body"  placeholder="body"}}
+  {{view Ember.TextField valueBinding="post_id"  placeholder="post_id"}}
+  {{submitButton "Create"}}
+{{/with}}

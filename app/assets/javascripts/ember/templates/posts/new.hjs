@@ -1,0 +1,4 @@
+{{view Ember.TextField valueBinding="title" placeholder="title"}}
+{{view Ember.TextField valueBinding="body"  placeholder="body"}}
+{{submitButton "Create"}}
+<a {{action "cancelForm"}}>Cancel</a>

@@ -34,6 +34,9 @@ App.router = Ember.RouteManager.create(
     # posts#index
     index: Ember.LayoutState.create(
       viewClass: App.PostsIndexView
+      enter: (stateManager,transition) ->
+        @_super stateManager, transition
+        App.postsController.findAll()
     )
     # posts#new
     newPost: Ember.LayoutState.create(
@@ -47,8 +50,8 @@ App.router = Ember.RouteManager.create(
       enter: (stateManager, transition) ->
         @_super stateManager, transition
         postId = stateManager.getPath("params.postId")
-        post = App.store.find(App.Post,postId)
-        @get("view").set "post", post
+        App.postsController.selectPost(postId)
+        #@get("view").set "post", post
     )
   )
 )

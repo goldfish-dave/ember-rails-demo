@@ -1,0 +1,3 @@
+<div class='well'>
+  <p>{{comment.body}}</p>
+</div>
