@@ -6,8 +6,6 @@ App.PostsNewView = Ember.View.extend(
   # different than edit to enable validation for new objects
   init: ->
     @_super()
-    #@transaction = App.store.transaction()
-    #@set "post", @transaction.createRecord(App.Post, {})
 
   # called when added to the dom, like viewDidLoad
   didInsertElement: ->
@@ -15,19 +13,12 @@ App.PostsNewView = Ember.View.extend(
     @$("input:first").focus()
 
   cancelForm: ->
-    #@transaction.rollback()
     App.router.set('location','posts')
 
   submit: (event) ->
     formTitle = @get('title')
     formBody = @get('body')
     App.postsController.createPost({title: formTitle, body: formBody})
-    #post = @get("post")
-    #validationErrors = post.validate()
     event.preventDefault()
-    #if validationErrors isnt `undefined`
-    #  App.displayError validationErrors
-    #else
-    # @transaction.commit()
     App.router.set('location','posts')
 )
