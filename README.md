@@ -1,4 +1,5 @@
-== Ember Rails Demo
+Ember Rails Demo
+----------------
 
 This code is mostly garbage, however, there are some bits of it that might be helpful.
 
