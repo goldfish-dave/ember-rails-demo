@@ -15,7 +15,6 @@ Using [Ember.js](http://www.emberjs.org), evaluate the following:
 Implementation Notes:
 
 *   Serialization of JSON is done via [Active_Model_Serializers](https://github.com/josevalim/active_model_serializers). Currently requires a "scope" (that is, current_user-like object), hence the anemic user inclusion.
-*   Rails 3-style Responders don't play well with Batman validation (usually doesn't matter since you would have client side validators too), note the server-side controller implementation. Pagination also needed some changes in the controller.
 *   Pusher token expired.
 
 Awesomeness:
